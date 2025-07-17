@@ -12,7 +12,7 @@ class AiChatBotApplicationTests {
     private AiHelper aiHelper;
     @Test
     void chat() {
-        aiHelper.chat("Hey ChatGPT!");
+        aiHelper.chat("Hey there! who are you?");
     }
 
 }
