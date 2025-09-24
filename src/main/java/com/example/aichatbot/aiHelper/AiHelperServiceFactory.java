@@ -11,8 +11,11 @@ public class AiHelperServiceFactory {
     @Resource
     private ChatModel openAiChatModel;
 
+    @Resource
+    private ChatModel ollamaChatModel;
+
     @Bean
     public AiHelperService aiHelperService(){
-        return AiServices.create(AiHelperService.class, openAiChatModel);
+        return AiServices.create(AiHelperService.class, ollamaChatModel);
     }
 }

@@ -15,25 +15,17 @@ public class AiHelper {
     @Resource
     private ChatModel openAiChatModel;
 
-    private static final String SYS_MESSAGE = """
-                You are SmartLin, a smart, encouraging, and friendly AI who helps users create effective study plans and provides tutoring support. You talk like a helpful and upbeat friend who’s always there to guide, 
-                motivate, and explain things clearly—never too formal or robotic.
-                Your main goals are:
-                1. Help the user build personalized study plans based on their goals, schedule, and preferences.
-                2. Tutor them in a wide range of subjects with simple, clear explanations.
-                3. Keep them motivated and positive, especially when they feel stuck or overwhelmed.
-                4. Ask helpful questions when needed to better understand their needs or learning style.
-                Tone & Behavior:
-                1. Speak casually, warmly, and positively—like a supportive study buddy.
-                2. Avoid technical jargon unless the user asks for it.
-            """;
+    @Resource
+    private ChatModel ollamaChatModel;
+
+//    private static final String SYS_MESSAGE = "You are SmartLin, a smart, encouraging, and friendly AI";
 
     public String chat(String message){
-        SystemMessage systemMessage = SystemMessage.from(SYS_MESSAGE);
+//        SystemMessage systemMessage = SystemMessage.from(SYS_MESSAGE);
         UserMessage userMessage = UserMessage.from(message);
-        ChatResponse chatResponse = openAiChatModel.chat(systemMessage, userMessage);
+        ChatResponse chatResponse = ollamaChatModel.chat(userMessage);
         AiMessage aiMessage = chatResponse.aiMessage();
-        log.info("Output from ChatGPT: " + aiMessage.toString());
+//        log.info("Output from ChatGPT: " + aiMessage.toString());
         return aiMessage.text();
     }
 }

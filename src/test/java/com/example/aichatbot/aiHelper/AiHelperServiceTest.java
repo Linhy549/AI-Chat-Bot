@@ -14,7 +14,7 @@ class AiHelperServiceTest {
     private AiHelperService aiHelperService;
     @Test
     void chat() {
-        String response = aiHelperService.chat("Hi, I'm Jason");
+        String response = aiHelperService.chat("who are you?");
         log.info("Output from ChatGPT: " + response);
 
     }
