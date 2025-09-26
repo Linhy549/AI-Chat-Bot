@@ -10,15 +10,15 @@ import java.time.Duration;
 @Configuration
 public class OllamaConfig {
 
-    @Bean
-    public OllamaChatModel ollamaChatModel(){
-        OllamaChatModel model = OllamaChatModel.builder()
-                .modelName("gemma3:1b")
-                .baseUrl("http://localhost:11434")
-                .httpClientBuilder(new SpringRestClientBuilder())
-                .timeout(Duration.ofSeconds(30)) // 超时时间
-                .maxRetries(3) // 超时最大重试次数
-                .build();
-        return model;
-    }
+//    @Bean
+//    public OllamaChatModel ollamaChatModel(){
+//        OllamaChatModel model = OllamaChatModel.builder()
+//                .modelName("gemma3:1b")
+//                .baseUrl("http://localhost:11434")
+//                .httpClientBuilder(new SpringRestClientBuilder())
+//                .timeout(Duration.ofSeconds(30)) // 超时时间
+//                .maxRetries(3) // 超时最大重试次数
+//                .build();
+//        return model;
+//    }
 }
