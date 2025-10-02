@@ -1,39 +1,33 @@
 package com.example.aichatbot.model;
 
+
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+
+@Data
 public class Appointment {
-    private String userName;
-    private String userEmail;
-    private String appointmentDate;
 
-    public Appointment(String userName, String userEmail, String appointmentDate) {
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.appointmentDate = appointmentDate;
+    private Long id;
+
+
+    private String customerName;
+
+    private String customerPhone;
+
+    private String serviceType;
+
+    private LocalDateTime appointmentTime;
+
+    private Integer status;
+
+    private LocalDateTime createTime;
+
+    // 插入前自动填充创建时间
+    public void prePersist() {
+        this.createTime = LocalDateTime.now();
     }
 
-    // getters and setters
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getAppointmentDate() {
-        return appointmentDate;
-    }
-
-    public void setAppointmentDate(String appointmentDate) {
-        this.appointmentDate = appointmentDate;
-    }
+    // Getter + Setter（Lombok 的 @Data 注解可简化）
 }
