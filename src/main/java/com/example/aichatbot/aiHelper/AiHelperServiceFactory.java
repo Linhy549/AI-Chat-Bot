@@ -22,6 +22,9 @@ public class AiHelperServiceFactory {
     @Resource
     private StreamingChatModel ollamaStreamingChatModel;
 
+    @Resource
+    private ContentRetriever contentRetriever;
+
     @Bean
     public AiHelperService aiHelperService(){
 
@@ -34,6 +37,7 @@ public class AiHelperServiceFactory {
                 .chatMemory(chatMemory)
                 .chatMemoryProvider(memoryId ->
                         MessageWindowChatMemory.withMaxMessages(15))
+                .contentRetriever(contentRetriever) // RAG 检索增强生成
                 .build();
         return aiHelperService;
     }

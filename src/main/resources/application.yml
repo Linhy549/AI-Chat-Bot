@@ -17,9 +17,12 @@ langchain4j:
   ollama:
     chat-model:
       base-url: http://localhost:11434
-      model-name: gemma3:1b
-      timeout: 60s
+      model-name: gemma3:4b
+      timeout: 30s
     streaming-chat-model:
-      model-name: gemma3:1b
+      model-name: gemma3:4b
       base-url: http://localhost:11434
-      timeout: 60s
+      timeout: 30s
+    embedding-model:
+      base-url: http://localhost:11434
+      model-name: nomic-embed-text

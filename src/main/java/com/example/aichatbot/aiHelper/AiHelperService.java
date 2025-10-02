@@ -10,5 +10,6 @@ public interface AiHelperService {
 //    @SystemMessage(fromResource = "sys_prompt.txt")
     String chat(String userMessage);
 
-    Flux<String> chatStreaming(@MemoryId String messageId, @UserMessage String message);
+    @SystemMessage(fromResource = "sys_prompt.txt")
+    Flux<String> chatStreaming(@MemoryId String memoryId, @UserMessage String message);
 }

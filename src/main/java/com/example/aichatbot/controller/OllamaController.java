@@ -31,13 +31,13 @@ public class OllamaController {
         return chat.aiMessage().text();
     }
 
-    @GetMapping("/model/email")
-    public boolean book() {
-
-        // Example: create appointment directly
-        Appointment appointment = new Appointment("John Doe", "john@example.com", "2025-09-25 15:00");
-        appointmentService.bookAppointment(appointment);
-
-        return true;
-    }
+//    @GetMapping("/model/email")
+//    public boolean book() {
+//
+//        // Example: create appointment directly
+//        Appointment appointment = new Appointment("John Doe", "john@example.com", "2025-09-25 15:00");
+//        appointmentService.bookAppointment(appointment);
+//
+//        return true;
+//    }
 }
